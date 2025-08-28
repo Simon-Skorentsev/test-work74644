@@ -1,27 +1,36 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
-import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header/Header';
+import Content from '@/components/Layout/Content/Content';
+
+import GlobalProviders from '@/providers/GlobalProviders';
+
+import '@/config/_reset.scss';
+import { SITE_NAME } from '@/config/constants';
 
 import './global.scss';
 
 export const metadata: Metadata = {
-	title: 'DummyShop - Your Online Store',
+	title: `${SITE_NAME} - Your Online Store`,
 	description: 'Shop the latest products from DummyJSON API',
 	keywords: 'shop, products, online store, dummyjson',
-	authors: [{ name: 'DummyShop Team' }],
-	viewport: 'width=device-width, initial-scale=1',
+	authors: [{ name: 'Simon' }],
+	// metadataBase: new URL(SITE_URL),
+};
+
+export const viewport: Viewport = {
+	width: 'device-width',
+	initialScale: 1,
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
 			<body>
-				<div className='mainLayout'>
-					<Header />
-					<main className='mainContent'>{children}</main>
-					<Footer />
-				</div>
+				<GlobalProviders>
+					<div className='mainLayout'>
+						<Content>{children}</Content>
+					</div>
+				</GlobalProviders>
 			</body>
 		</html>
 	);

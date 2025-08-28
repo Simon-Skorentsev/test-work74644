@@ -1,0 +1,44 @@
+.title {
+	margin-bottom: 2rem;
+
+	color: var(--dark-color);
+	font-weight: 700;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 1.5rem;
+	margin: 2rem 0;
+
+	@media (width <= 768px) {
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 1rem;
+		margin: 1.5rem 0;
+	}
+
+	@media (width <= 576px) {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+}
+
+.emptyState {
+	padding: 3rem 1rem;
+
+	color: var(--gray-600);
+	text-align: center;
+
+	p {
+		margin-bottom: 1rem;
+
+		font-size: 1.1rem;
+	}
+}
+
+.skeleton {
+	width: 23rem;
+	height: 24rem;
+}

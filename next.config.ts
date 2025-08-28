@@ -3,8 +3,6 @@ import type { NextConfig } from 'next';
 const nextConfig: NextConfig = {
 	typedRoutes: true,
 	images: {
-		// TODO:
-		domains: ['cdn.dummyjson.com', 'i.dummyjson.com'],
 		remotePatterns: [
 			{
 				protocol: 'https',

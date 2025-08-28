@@ -1,0 +1,16 @@
+.footerText {
+	margin: 0;
+
+	font-size: 0.9rem;
+
+	opacity: 0.8;
+
+	@media (width <= 576px) {
+		font-size: 0.8rem;
+	}
+}
+
+.userEmail {
+	color: var(--info-color);
+	font-weight: 500;
+}

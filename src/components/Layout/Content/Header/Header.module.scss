@@ -1,0 +1,27 @@
+.header {
+	padding: 1rem 0;
+
+	background: var(--white);
+	border-bottom: 1px solid var(--gray-200);
+	box-shadow: var(--box-shadow-sm);
+}
+
+.headerContent {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 3rem;
+}
+
+.logo {
+	color: var(--primary-color);
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-decoration: none;
+
+	transition: var(--transition);
+
+	&:hover {
+		opacity: 0.8;
+	}
+}

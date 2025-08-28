@@ -1,0 +1,60 @@
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+
+	text-align: center;
+
+	.warn {
+		margin-bottom: 1rem;
+
+		font-size: 4rem;
+	}
+
+	.title {
+		margin-bottom: 1rem;
+
+		color: var(--danger-color);
+		font-weight: 600;
+		font-size: 2rem;
+	}
+
+	.text {
+		margin-bottom: 2rem;
+
+		color: var(--gray-600);
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
+	.buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+	}
+
+	.details {
+		margin-top: 2rem;
+
+		padding: 1rem;
+
+		text-align: left;
+
+		background: var(--gray-100);
+		border-radius: var(--border-radius);
+	}
+
+	.summary {
+		font-weight: 600;
+
+		cursor: pointer;
+	}
+
+	.pre {
+		margin-top: 1rem;
+
+		font-size: 0.8rem;
+		white-space: pre-wrap;
+		word-break: break-all;
+	}
+}

@@ -1,0 +1,34 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 200px);
+	padding: 2rem 1rem;
+}
+
+.formContainer {
+	width: 100%;
+	max-width: 400px;
+	padding: 2.5rem;
+
+	background: var(--white);
+	border-radius: var(--border-radius-lg);
+	box-shadow: var(--box-shadow-lg);
+
+	@media (width <= 576px) {
+		margin: 1rem;
+		padding: 2rem 1.5rem;
+	}
+}
+
+.buttonWrapper {
+	margin-top: 1rem;
+
+	text-align: center;
+
+	.submitButton {
+		&::first-letter {
+			text-transform: uppercase;
+		}
+	}
+}

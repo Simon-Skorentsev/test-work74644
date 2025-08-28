@@ -5,8 +5,6 @@ import unusedImportsPlugin from 'eslint-plugin-unused-imports';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 
-// import globals from 'globals';  // TODO:
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
@@ -48,13 +46,6 @@ const eslintConfig = [
 				},
 			],
 		},
-		// languageOptions: {  // TODO:
-		//   globals: {
-		//     ...globals.browser,
-		//     ...globals.node,
-		//     ...globals.es2021,
-		//   },
-		// },
 		ignores: ['node_modules/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
 	},
 	prettierConfig,

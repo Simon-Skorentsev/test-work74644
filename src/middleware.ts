@@ -1,44 +1,38 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import type { NextRequest, NextResponse } from 'next/server';
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  
-  // Get token from cookies or headers
-  const token = request.cookies.get('auth_token')?.value || 
-                request.headers.get('authorization')?.replace('Bearer ', '');
+import { PublicPages } from './config/publicPages.config';
+import { getNewTokensByRefresh } from './serverActions/utils/getNewTokensByRefresh';
+import { EnumTokens } from './types/auth.types';
+import { nextRedirect } from './utils/nextRedirect';
 
-  // Public paths that don't require authentication
-  const publicPaths = ['/login', '/'];
-  
-  // Check if the current path is public
-  const isPublicPath = publicPaths.some(path => pathname.startsWith(path));
-  
-  // For now, we don't have protected routes in this app
-  // But this middleware structure is ready for future protected routes
-  if (pathname.startsWith('/dashboard') || pathname.startsWith('/profile')) {
-    if (!token) {
-      return NextResponse.redirect(new URL('/login', request.url));
-    }
-  }
-  
-  // Redirect authenticated users away from login page
-  if (pathname === '/login' && token) {
-    return NextResponse.redirect(new URL('/', request.url));
-  }
+export async function middleware(request: NextRequest, response: NextResponse) {
+	const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value;
+	let accessToken = request.cookies.get(EnumTokens.ACCESS_TOKEN)?.value;
 
-  return NextResponse.next();
+	if (!refreshToken) {
+		request.cookies.delete(EnumTokens.ACCESS_TOKEN);
+		return null;
+	}
+
+	if (!accessToken) {
+		try {
+			const data = await getNewTokensByRefresh(refreshToken);
+			accessToken = data.accessToken;
+		} catch (error) {
+			if (error instanceof Error) {
+				if (error.message === 'Invalid token') {
+					console.log('Invalid token');
+					request.cookies.delete(EnumTokens.ACCESS_TOKEN);
+					return null;
+				}
+			}
+			return null;
+		}
+	}
+
+	return nextRedirect(PublicPages.HOME, request.url);
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - api (API routes)
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+	matcher: ['/auth'],
 };

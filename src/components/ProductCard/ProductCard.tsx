@@ -2,9 +2,11 @@
 
 import Image from 'next/image';
 
-import useAuthStore from '@/store/authStore';
+import { useAuthStore } from '@/providers/authProvider';
 
-import { Product } from '@/types';
+import { Button } from '../ui/Button/Button';
+
+import { Product } from '@/types/products.types';
 
 import styles from './ProductCard.module.scss';
 
@@ -13,10 +15,9 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-	const { isAuthenticated } = useAuthStore();
+	const isLoggedIn = useAuthStore((store) => store.isLoggedIn);
 
 	const handleAddToCart = () => {
-		// Функционал кнопки не требуется, по заданию
 		console.log('Add to cart:', product.id);
 	};
 
@@ -38,13 +39,13 @@ const ProductCard = ({ product }: ProductCardProps) => {
 				<p className={styles.category}>{product.category}</p>
 				<div className={styles.price}>${product.price.toFixed(2)}</div>
 
-				{isAuthenticated && (
-					<button
+				{isLoggedIn && (
+					<Button
 						onClick={handleAddToCart}
-						className={`btn btnSuccess ${styles.addToCartBtn}`}
+						variant='secondary'
 					>
 						Add to cart
-					</button>
+					</Button>
 				)}
 			</div>
 		</div>

@@ -1,6 +1,9 @@
 'use client';
 
+import cn from 'clsx';
 import { useEffect } from 'react';
+
+import styles from './error.module.scss';
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
 	useEffect(() => {
@@ -8,40 +11,12 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 	}, [error]);
 
 	return (
-		<div className='container'>
-			<div
-				style={{
-					textAlign: 'center',
-					padding: '4rem 2rem',
-					maxWidth: '500px',
-					margin: '0 auto',
-				}}
-			>
-				<div style={{ fontSize: '4rem', marginBottom: '1rem' }}>⚠️</div>
-
-				<h1
-					style={{
-						fontSize: '2rem',
-						fontWeight: '600',
-						color: 'var(--danger-color)',
-						marginBottom: '1rem',
-					}}
-				>
-					Something went wrong!
-				</h1>
-
-				<p
-					style={{
-						fontSize: '1.1rem',
-						color: 'var(--gray-600)',
-						marginBottom: '2rem',
-						lineHeight: '1.6',
-					}}
-				>
-					We encountered an unexpected error. Please try again.
-				</p>
-
-				<div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+		<div className={cn('container', styles.container)}>
+			<div>
+				<div className={styles.warn}>⚠️</div>
+				<h1 className={styles.title}>Something went wrong!</h1>
+				<p className={styles.text}>We encountered an unexpected error. Please try again.</p>
+				<div className={styles.buttons}>
 					<button
 						onClick={reset}
 						className='btn btnPrimary'
@@ -49,7 +24,6 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 					>
 						Try Again
 					</button>
-
 					<button
 						onClick={() => (window.location.href = '/')}
 						className='btn'
@@ -64,26 +38,10 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
 						Go Home
 					</button>
 				</div>
-
 				{process.env.NODE_ENV === 'development' && (
-					<details
-						style={{
-							marginTop: '2rem',
-							padding: '1rem',
-							background: 'var(--gray-100)',
-							borderRadius: 'var(--border-radius)',
-							textAlign: 'left',
-						}}
-					>
-						<summary style={{ cursor: 'pointer', fontWeight: '600' }}>Error Details (Development)</summary>
-						<pre
-							style={{
-								marginTop: '1rem',
-								fontSize: '0.8rem',
-								whiteSpace: 'pre-wrap',
-								wordBreak: 'break-word',
-							}}
-						>
+					<details className={styles.details}>
+						<summary className={styles.summary}>Error Details (Development)</summary>
+						<pre className={styles.pre}>
 							{error.message}
 							{error.stack && `\n\n${error.stack}`}
 						</pre>

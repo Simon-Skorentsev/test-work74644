@@ -1,0 +1,13 @@
+export const mockUser = {
+	accessToken:
+		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTYzNzY1MzMsImV4cCI6MTc1NjM4MDEzM30.PrPTb9hMa2gNdNMbJ59Eo2oTe7utoNAS4sfUtO_m9_M',
+	refreshToken:
+		'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJlbWlseXMiLCJlbWFpbCI6ImVtaWx5LmpvaG5zb25AeC5kdW1teWpzb24uY29tIiwiZmlyc3ROYW1lIjoiRW1pbHkiLCJsYXN0TmFtZSI6IkpvaG5zb24iLCJnZW5kZXIiOiJmZW1hbGUiLCJpbWFnZSI6Imh0dHBzOi8vZHVtbXlqc29uLmNvbS9pY29uL2VtaWx5cy8xMjgiLCJpYXQiOjE3NTYzNzY1MzMsImV4cCI6MTc1ODk2ODUzM30.VFSJs_am6jOpsJXFI-SLLdB0V6Wh8a6WIa6HgkvAAf4',
+	id: 1,
+	username: 'emilys',
+	email: 'emily.johnson@x.dummyjson.com',
+	firstName: 'Emily',
+	lastName: 'Johnson',
+	gender: 'female',
+	image: 'https://dummyjson.com/icon/emilys/128',
+} as const;

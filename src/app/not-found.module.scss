@@ -1,0 +1,31 @@
+.container {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 4rem 2rem;
+
+	text-align: center;
+
+	.title {
+		margin-bottom: 1rem;
+
+		color: var(--gray-400);
+		font-weight: 700;
+		font-size: 4rem;
+	}
+
+	.subtitle {
+		margin-bottom: 1rem;
+
+		color: var(--dark-color);
+		font-weight: 600;
+		font-size: 2rem;
+	}
+
+	.text {
+		margin-bottom: 2rem;
+
+		color: var(--gray-600);
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+}
