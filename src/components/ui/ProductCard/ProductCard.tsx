@@ -17,7 +17,7 @@ interface ProductCardProps {
 
 const ProductCard = ({ product, priority = false }: ProductCardProps) => {
 	const isLoggedIn = useAuthStore((store) => store.isLoggedIn);
-
+	console.log(123, process.env.NEXT_PUBLIC_SITE_URL);
 	const handleAddToCart = () => {
 		console.log('Add to cart:', product.id);
 	};
