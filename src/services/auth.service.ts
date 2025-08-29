@@ -1,6 +1,7 @@
 import { AxiosResponse } from 'axios';
 import Cookies from 'js-cookie';
 
+import { DOMAIN } from '@/config/constants';
 import { mockUser } from '@/config/mockData';
 
 import { axiosClassic, instance } from '@/api/axios';
@@ -74,7 +75,6 @@ class AuthService {
 
 	// Регистрации нет в dummyjson, использую юзера 'emilys' для имитации входа
 	private async register(data: RegisterData) {
-		console.log(123, process.env.NEXT_PUBLIC_SITE_URL);
 		const response = await axiosClassic.post<AuthResponse>(`${this.signPath}/add`, data);
 		response.data = mockUser;
 		this.saveAuthData(response);
@@ -94,7 +94,7 @@ class AuthService {
 
 	private saveTokenStorage(accessToken: string) {
 		Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-			domain: 'https://test-work74644.vercel.app',
+			domain: DOMAIN,
 			expires: 1 / 24, //1h
 			sameSite: 'strict',
 			secure: true,

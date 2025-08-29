@@ -42,6 +42,7 @@ const ProductCard = ({ product, priority = false }: ProductCardProps) => {
 
 				{isLoggedIn && (
 					<Button
+						className={styles.buy}
 						onClick={handleAddToCart}
 						variant='secondary'
 					>

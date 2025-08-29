@@ -1,11 +1,11 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import Content from '@/components/Layout/Content/Content';
 
 import GlobalProviders from '@/providers/GlobalProviders';
 
 import '@/config/_reset.scss';
-import { SITE_NAME, SITE_URL } from '@/config/constants';
+import { COLORS, DOMAIN, SITE_NAME } from '@/config/constants';
 
 import { getYear } from '@/serverActions/utils/getYear';
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 		siteName: SITE_NAME,
 		emails: [`skorencem@gmail.com`],
 	},
-	metadataBase: new URL(SITE_URL),
+	metadataBase: new URL(DOMAIN),
 	authors: {
 		name: 'Simon Skorentsev',
 		url: 'https://github.com/Simon-Skorentsev/portfolio',
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
 	},
 };
 
-// export const viewport: Viewport = {
-// 	themeColor: COLORS.bg,
-// };
+export const viewport: Viewport = {
+	themeColor: COLORS.bg,
+};
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const year = await getYear();
@@ -45,9 +45,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 		<html lang='en'>
 			<body>
 				<GlobalProviders>
-					<div className='mainLayout'>
-						<Content year={year}>{children}</Content>
-					</div>
+					<Content year={year}>{children}</Content>
 				</GlobalProviders>
 			</body>
 		</html>

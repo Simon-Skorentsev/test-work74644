@@ -8,8 +8,8 @@
 }
 
 .spinner {
-	border: 0.25rem solid var(--gray-300);
-	border-top-color: var(--primary-color);
+	border: 0.25rem solid $gray-300;
+	border-top-color: $simple-color;
 	border-radius: 50%;
 
 	animation: spin 1s linear infinite;
@@ -39,7 +39,7 @@
 .message {
 	margin: 0;
 
-	color: var(--gray-600);
+	color: $gray-600;
 	font-size: 1rem;
 }
 

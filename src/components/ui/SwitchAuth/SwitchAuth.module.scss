@@ -19,12 +19,12 @@
 		border-color 0.2s;
 
 	&:hover {
-		color: #ef4444;
+		color: $primary-color;
 	}
 }
 
 .active {
-	color: var(--color-primary, #ef4444);
+	color: $primary-color;
 
-	border-bottom: 2px solid var(--color-primary, #ef4444);
+	border-bottom: 2px solid $primary-color;
 }

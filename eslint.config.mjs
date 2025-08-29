@@ -29,7 +29,7 @@ const eslintConfig = [
 			'no-console': ['warn', { allow: ['warn', 'error'] }],
 			'no-debugger': 'warn',
 
-			'@typescript-eslint/no-unused-vars': 'off', // Disable the standard rule as we use unused-imports instead
+			'@typescript-eslint/no-unused-vars': 'off',
 			'@typescript-eslint/no-non-null-assertion': 'warn',
 
 			'react-hooks/rules-of-hooks': 'error',

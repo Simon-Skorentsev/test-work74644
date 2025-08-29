@@ -1,28 +1,31 @@
 .container {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	align-items: center;
+	justify-content: center;
 	max-width: 500px;
 	margin: 0 auto;
 	padding: 4rem 2rem;
 
 	text-align: center;
 
-	.warn {
-		margin-bottom: 1rem;
+	@include tablet {
+		padding: 1rem;
+	}
 
+	.warn {
 		font-size: 4rem;
 	}
 
 	.title {
-		margin-bottom: 1rem;
-
-		color: var(--danger-color);
+		color: $danger-color;
 		font-weight: 600;
 		font-size: 2rem;
 	}
 
 	.text {
-		margin-bottom: 2rem;
-
-		color: var(--gray-600);
+		color: $gray-600;
 		font-size: 1.1rem;
 		line-height: 1.6;
 	}
@@ -31,17 +34,31 @@
 		display: flex;
 		gap: 1rem;
 		justify-content: center;
+
+		.reset {
+			padding: 0.75rem 1.5rem;
+
+			font-size: 1rem;
+		}
+
+		.home {
+			padding: 0.75rem 1.5rem;
+
+			color: $gray-700;
+			font-size: 1rem;
+
+			background: $gray-200;
+			border: 1px solid $gray-300;
+		}
 	}
 
 	.details {
-		margin-top: 2rem;
-
 		padding: 1rem;
 
 		text-align: left;
 
-		background: var(--gray-100);
-		border-radius: var(--border-radius);
+		background: $gray-100;
+		border-radius: $border-radius;
 	}
 
 	.summary {
@@ -51,8 +68,6 @@
 	}
 
 	.pre {
-		margin-top: 1rem;
-
 		font-size: 0.8rem;
 		white-space: pre-wrap;
 		word-break: break-all;

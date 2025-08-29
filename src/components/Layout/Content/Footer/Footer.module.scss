@@ -1,21 +1,16 @@
 .footer {
-	margin-top: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	padding: 1rem 0;
 
-	color: var(--white);
+	color: $white;
+	line-height: 1.5rem;
 
-	background: var(--dark-color);
-
-	.footerContent {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+	background: $dark-color;
 }
 
 .skeleton {
 	width: 16rem;
 	height: 1.5rem;
-
-	background-color: #fff;
 }

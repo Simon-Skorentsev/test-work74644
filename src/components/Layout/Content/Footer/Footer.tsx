@@ -14,11 +14,7 @@ const DynamicFooterText = dynamic(() => import('./FooterDate/FooterDate').then((
 const Footer = ({ year }: { year: number }) => {
 	return (
 		<footer className={styles.footer}>
-			<div className='container'>
-				<div className={styles.footerContent}>
-					<DynamicFooterText year={year} />
-				</div>
-			</div>
+			<DynamicFooterText year={year} />
 		</footer>
 	);
 };

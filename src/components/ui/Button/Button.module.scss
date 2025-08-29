@@ -1,4 +1,5 @@
 .button {
+	display: block;
 	padding: 0.5rem 2.5rem;
 
 	font-weight: 600;
@@ -10,39 +11,41 @@
 	transition: background-color 0.2s;
 
 	&:disabled {
-		background-color: #9ca3af;
+		background-color: $gray-500;
 		cursor: not-allowed;
 	}
 }
 
 .primary {
-	color: white;
+	color: $white;
 
-	background-color: var(--color-primary, #ef4444);
+	background-color: $simple-color;
+	border-color: $simple-color;
 
 	&:hover:not(:disabled) {
-		background-color: #f87171;
+		background-color: $bg-simple-color;
+		border-color: $bg-simple-color;
 	}
 }
 
 .secondary {
-	color: var(--white);
+	color: $white;
 
-	background-color: var(--success-color);
-	border-color: var(--success-color);
+	background-color: $secondary-color;
+	border-color: $secondary-color;
 
 	&:hover:not(:disabled) {
-		background-color: #218838;
-		border-color: #1e7e34;
+		background-color: $bg-secondary-color;
+		border-color: $border-secondary-color;
 	}
 }
 
-.simple {
-	font-weight: 500;
+.accent {
+	color: white;
 
-	background-color: var(--border-color, #d1d5db);
+	background-color: $primary-color;
 
 	&:hover:not(:disabled) {
-		background-color: #c1c4c9;
+		background-color: $bg-primary-color;
 	}
 }

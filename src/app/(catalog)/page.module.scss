@@ -1,7 +1,7 @@
 .title {
 	margin-bottom: 2rem;
 
-	color: var(--dark-color);
+	color: $dark-color;
 	font-weight: 700;
 	font-size: 2.5rem;
 	text-align: center;
@@ -10,7 +10,7 @@
 .emptyState {
 	padding: 3rem 1rem;
 
-	color: var(--gray-600);
+	color: $gray-600;
 	text-align: center;
 
 	p {

@@ -2,33 +2,28 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: calc(100vh - 200px);
-	padding: 2rem 1rem;
-}
+	padding: 2rem;
 
-.formContainer {
-	width: 100%;
-	max-width: 400px;
-	padding: 2.5rem;
+	.formContainer {
+		width: 100%;
+		max-width: 400px;
+		padding: 2.5rem;
 
-	background: var(--white);
-	border-radius: var(--border-radius-lg);
-	box-shadow: var(--box-shadow-lg);
+		background: $white;
+		border-radius: $border-radius-lg;
+		box-shadow: $box-shadow-lg;
 
-	@media (width <= 576px) {
-		margin: 1rem;
-		padding: 2rem 1.5rem;
-	}
-}
+		@include mobile {
+			margin: 1rem;
+			padding: 2rem 1.5rem;
+		}
 
-.buttonWrapper {
-	margin-top: 1rem;
+		.submitButton {
+			margin: 0 auto;
 
-	text-align: center;
-
-	.submitButton {
-		&::first-letter {
-			text-transform: uppercase;
+			&::first-letter {
+				text-transform: uppercase;
+			}
 		}
 	}
 }

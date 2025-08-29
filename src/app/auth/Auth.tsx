@@ -111,9 +111,9 @@ export function Auth() {
 							)}
 						</>
 					)}
-
 					<div className={styles.buttonWrapper}>
 						<Button
+							variant='accent'
 							className={styles.submitButton}
 							type='submit'
 							isLoading={isLoading}

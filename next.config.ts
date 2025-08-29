@@ -19,7 +19,7 @@ const nextConfig: NextConfig = {
 		],
 	},
 	sassOptions: {
-		includePaths: ['./src/styles'],
+		prependData: `@use '@/config/vars' as *;@use '@/config/mixins' as *;`,
 	},
 };
 

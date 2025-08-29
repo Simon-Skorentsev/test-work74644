@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 
 import styles from './Button.module.scss';
 
-export type ButtonVariants = 'primary' | 'secondary' | 'simple';
+export type ButtonVariants = 'primary' | 'secondary' | 'accent';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 	isLoading?: boolean;
@@ -17,7 +17,7 @@ export function Button({ children, isLoading, variant = 'primary', className, ..
 				styles.button,
 				variant === 'primary' && styles.primary,
 				variant === 'secondary' && styles.secondary,
-				variant === 'simple' && styles.simple,
+				variant === 'accent' && styles.accent,
 				className,
 			)}
 			disabled={isLoading || props.disabled}

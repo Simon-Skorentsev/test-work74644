@@ -26,20 +26,10 @@ export default function HeaderProfile() {
 					<span className={styles.userName}>
 						{user.firstName} {user.lastName}
 					</span>
-					<Button
-						variant='simple'
-						onClick={() => mutate()}
-					>
-						{isPending ? 'Loading' : 'Logout'}
-					</Button>
+					<Button onClick={() => mutate()}>{isPending ? 'Loading' : 'Logout'}</Button>
 				</div>
 			) : (
-				<LinkButton
-					variant='simple'
-					href='/auth'
-				>
-					Login
-				</LinkButton>
+				<LinkButton href='/auth'>Login</LinkButton>
 			)}
 		</nav>
 	);

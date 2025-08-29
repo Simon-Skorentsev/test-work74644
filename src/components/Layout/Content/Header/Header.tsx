@@ -18,7 +18,7 @@ const Header = () => {
 			<div className='container'>
 				<div className={styles.headerContent}>
 					<Link
-						href='/auth'
+						href='/'
 						className={styles.logo}
 					>
 						DummyShop

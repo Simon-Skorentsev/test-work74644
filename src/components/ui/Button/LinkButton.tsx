@@ -27,7 +27,7 @@ export function LinkButton({
 				styles.button,
 				variant === 'primary' && styles.primary,
 				variant === 'secondary' && styles.secondary,
-				variant === 'simple' && styles.simple,
+				variant === 'accent' && styles.accent,
 				className,
 			)}
 			{...props}

@@ -10,9 +10,5 @@ export const metadata: Metadata = {
 };
 
 export default function AuthPage() {
-	return (
-		<div className='container'>
-			<Auth />
-		</div>
-	);
+	return <Auth />;
 }

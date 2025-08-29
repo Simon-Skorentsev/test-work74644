@@ -22,7 +22,6 @@ export const revalidate = 600;
 
 export default async function HomePage() {
 	const response = await productsService.getProducts();
-
 	return (
 		<div className='container'>
 			<section>
