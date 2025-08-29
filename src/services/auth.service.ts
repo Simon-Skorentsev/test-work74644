@@ -74,6 +74,7 @@ class AuthService {
 
 	// Регистрации нет в dummyjson, использую юзера 'emilys' для имитации входа
 	private async register(data: RegisterData) {
+		console.log(123, process.env.NEXT_PUBLIC_SITE_URL);
 		const response = await axiosClassic.post<AuthResponse>(`${this.signPath}/add`, data);
 		response.data = mockUser;
 		this.saveAuthData(response);

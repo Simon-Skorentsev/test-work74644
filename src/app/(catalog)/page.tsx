@@ -7,6 +7,15 @@ import styles from './page.module.scss';
 
 export const metadata: Metadata = {
 	title: 'Catalog',
+	description: 'Dump catalog',
+	alternates: {
+		canonical: '/',
+	},
+	openGraph: {
+		type: 'website',
+		url: '/',
+		title: 'Dump catalog',
+	},
 };
 
 export const revalidate = 600;
