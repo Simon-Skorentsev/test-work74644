@@ -93,7 +93,7 @@ class AuthService {
 
 	private saveTokenStorage(accessToken: string) {
 		Cookies.set(EnumTokens.ACCESS_TOKEN, accessToken, {
-			domain: 'localhost', // TODO: Поменять для деплоя
+			domain: 'https://test-work74644.vercel.app',
 			expires: 1 / 24, //1h
 			sameSite: 'strict',
 			secure: true,
