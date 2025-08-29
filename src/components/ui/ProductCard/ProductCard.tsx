@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { useAuthStore } from '@/providers/authProvider';
 
-import { Button } from '../ui/Button/Button';
+import { Button } from '../Button/Button';
 
 import { Product } from '@/types/products.types';
 
@@ -12,9 +12,10 @@ import styles from './ProductCard.module.scss';
 
 interface ProductCardProps {
 	product: Product;
+	priority?: boolean;
 }
 
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product, priority = false }: ProductCardProps) => {
 	const isLoggedIn = useAuthStore((store) => store.isLoggedIn);
 
 	const handleAddToCart = () => {
@@ -27,10 +28,10 @@ const ProductCard = ({ product }: ProductCardProps) => {
 				<Image
 					src={product.thumbnail}
 					alt={product.title}
-					width={300}
-					height={200}
 					className={styles.image}
-					priority={false}
+					priority={priority}
+					fill={true}
+					sizes='(max-width: 576px) 100vw, (max-width: 768px) 250px, 280px'
 				/>
 			</div>
 

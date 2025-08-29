@@ -18,7 +18,6 @@ export default async function HomePage() {
 		<div className='container'>
 			<section>
 				<h1 className={styles.title}>Our Products</h1>
-
 				{response.products.length === 0 ? (
 					<div className={styles.emptyState}>
 						<p>No products found.</p>

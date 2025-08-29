@@ -9,9 +9,7 @@ import '@/config/_reset.scss';
 import Header from './Header/Header';
 import { authService } from '@/services/auth.service';
 
-export default function Content({ children }: { children: React.ReactNode }) {
-	const serverYear = new Date().getFullYear();
-
+export default function Content({ children, year }: { children: React.ReactNode; year: number }) {
 	useEffect(() => {
 		authService.initializeAuth();
 	}, []);
@@ -20,7 +18,7 @@ export default function Content({ children }: { children: React.ReactNode }) {
 		<>
 			<Header />
 			<main className='mainContent'>{children}</main>
-			<Footer year={serverYear} />
+			<Footer year={year} />
 		</>
 	);
 }

@@ -9,9 +9,9 @@ import LoadingSpinner from '@/components/ui/LoadingSpinner/LoadingSpinner';
 
 import { useAuthForm } from '@/hooks/useAuthForm';
 
-import { SwitchAuth } from './SwitchAuth';
-import { EnumSign } from '@/types/auth.types';
-import { LoginData, RegisterData } from '@/types/authForm.types';
+import { SwitchAuth } from '../../components/ui/SwitchAuth/SwitchAuth';
+
+import { EnumSign, LoginData, RegisterData } from '@/types/auth.types';
 
 import styles from './Auth.module.scss';
 

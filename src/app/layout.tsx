@@ -7,6 +7,8 @@ import GlobalProviders from '@/providers/GlobalProviders';
 import '@/config/_reset.scss';
 import { SITE_NAME } from '@/config/constants';
 
+import { getYear } from '@/serverActions/utils/getYear';
+
 import './global.scss';
 
 export const metadata: Metadata = {
@@ -14,7 +16,6 @@ export const metadata: Metadata = {
 	description: 'Shop the latest products from DummyJSON API',
 	keywords: 'shop, products, online store, dummyjson',
 	authors: [{ name: 'Simon' }],
-	// metadataBase: new URL(SITE_URL),
 };
 
 export const viewport: Viewport = {
@@ -22,13 +23,15 @@ export const viewport: Viewport = {
 	initialScale: 1,
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	const year = await getYear();
+
 	return (
 		<html lang='en'>
 			<body>
 				<GlobalProviders>
 					<div className='mainLayout'>
-						<Content>{children}</Content>
+						<Content year={year}>{children}</Content>
 					</div>
 				</GlobalProviders>
 			</body>

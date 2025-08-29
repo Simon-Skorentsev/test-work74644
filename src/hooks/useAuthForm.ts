@@ -7,8 +7,7 @@ import type { SubmitHandler, UseFormReset } from 'react-hook-form';
 import { PublicPages } from '@/config/publicPages.config';
 
 import { authService } from '@/services/auth.service';
-import { EnumSign } from '@/types/auth.types';
-import { LoginData, RegisterData } from '@/types/authForm.types';
+import { EnumSign, LoginData, RegisterData } from '@/types/auth.types';
 
 export function useAuthForm<T extends LoginData & RegisterData>(type: EnumSign, reset: UseFormReset<T>) {
 	const router = useRouter();

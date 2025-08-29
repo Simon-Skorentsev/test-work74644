@@ -5,12 +5,12 @@
 	color: var(--white);
 
 	background: var(--dark-color);
-}
 
-.footerContent {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	.footerContent {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 .skeleton {

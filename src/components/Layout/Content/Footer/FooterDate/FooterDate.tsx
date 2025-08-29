@@ -2,7 +2,7 @@
 
 import { useAuthStore } from '@/providers/authProvider';
 
-import styles from './Footer.module.scss';
+import styles from './FooterDate.module.scss';
 
 const FooterText = ({ year }: { year: number }) => {
 	const { user, isLoggedIn } = useAuthStore((store) => store);

@@ -1,9 +1,9 @@
 import type { NextRequest, NextResponse } from 'next/server';
 
 import { PublicPages } from './config/publicPages.config';
-import { getNewTokensByRefresh } from './serverActions/utils/getNewTokensByRefresh';
+import { getNewTokensByRefresh } from './serverActions/middlewares/utils/getNewTokensByRefresh';
+import { nextRedirect } from './serverActions/middlewares/utils/nextRedirect';
 import { EnumTokens } from './types/auth.types';
-import { nextRedirect } from './utils/nextRedirect';
 
 export async function middleware(request: NextRequest, response: NextResponse) {
 	const refreshToken = request.cookies.get(EnumTokens.REFRESH_TOKEN)?.value;

@@ -6,7 +6,7 @@ import { SkeletonLoader } from '@/components/ui/SkeletonLoader/SkeletonLoader';
 
 import styles from './Footer.module.scss';
 
-const DynamicFooterText = dynamic(() => import('./FooterText').then((mod) => mod.default), {
+const DynamicFooterText = dynamic(() => import('./FooterDate/FooterDate').then((mod) => mod.default), {
 	ssr: false,
 	loading: () => <SkeletonLoader className={styles.skeleton} />,
 });

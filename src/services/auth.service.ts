@@ -6,8 +6,7 @@ import { mockUser } from '@/config/mockData';
 import { axiosClassic, instance } from '@/api/axios';
 
 import { authStore } from '@/stores/authStore';
-import { EnumSign, EnumTokens } from '@/types/auth.types';
-import type { LoginData, RegisterData } from '@/types/authForm.types';
+import { EnumSign, EnumTokens, LoginData, RegisterData } from '@/types/auth.types';
 import type { User } from '@/types/user.types';
 
 interface AuthResponse extends User {
